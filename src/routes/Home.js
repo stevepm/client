@@ -13,7 +13,7 @@ const Home = () => (
       }
     `}
   >
-    {({ loading, error, users }) => {
+    {({ loading, error, data: { allUsers } }) => {
       if (loading) {
         return (
           <p>
@@ -29,7 +29,7 @@ const Home = () => (
         );
       }
 
-      return users.map(({ id, email }) => (
+      return allUsers.map(({ id, email }) => (
         <div key={id}>
           <p>
             {email}
